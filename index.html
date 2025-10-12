@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Portfolio</title>
+</head>
+
+<body>
+
+    <div class="particulas"></div>
+
+    <nav class="navegacao">
+
+        <ul class="menu">
+            <li>
+                <a href="#inicio" class="menu-link">Inicio</a>
+            </li>
+            <li>
+                <a href="#sobre" class="menu-link">Sobre</a>
+            </li>
+            <li>
+                <a href="#projetos" class="menu-link">Projetos</a>
+            </li>
+            <li>
+                <a href="#contatos" class="menu-link">Contato</a>
+            </li>
+        </ul>
+
+    </nav>
+
+    <main id="inicio" class="cabecalho">
+        <img src="./img/rayan.jpg" alt="Foto do Rayan Lucas" class="foto-perfil">
+        <h1>Rayan Lucas</h1>
+        <p class="cabecalho-sub-titulo">Desenvolverdor Frond End</p>
+    </main>
+
+    <section id="sobre" class="sobre">
+        <h2 class="sobre-titulo">Sobre Mim</h2>
+        <div class="sobre-caixa">
+            <p class="sobre-paragrafo">Olá! Meu nome é Rayan Lucas, tenho 27 anos e sou um desenvolvedor front-end
+                apaixonado por criar experiências digitais envolventes. Com habilidades em HTML, CSS e JavaScript,
+                estou sempre buscando aprender novas tecnologias e aprimorar minhas habilidades para entregar
+                projetos de alta qualidade.
+            </p>
+        </div>
+    </section>
+    <section id="projetos" class="projetos">
+        <h2 class="projetos-titulo">Meus Projetos</h2>
+        <div class="projetos-caixa">
+            <div class="projetos-card">
+                <img src="./img/Dev-Burger.png" alt="Projeto 1" class="projetos-imagem">
+                <div class="caixa-texto-projetos">
+                    <h3 class="info-projetos">Dev Burger</h3>
+                    <p class="paragrafo-projetos">Projeto de um site de hamburgueria, desenvolvido com HTML, CSS e
+                        JavaScript, focado em design responsivo e interatividade.</p>
+                </div>
+            </div>
+
+            <div class="projetos-card">
+                <img src="./img/cadastro de usuario.png" alt="Projeto 2" class="projetos-imagem">
+                <div class="caixa-texto-projetos">
+                    <h3 class="info-projetos">Cadastro de usuarios</h3>
+                    <p> Projeto de cadastro de usuario feito com HTML,CSS, REACT, NODE.JS , focado em design responsivo
+                        e interatividade.</p>
+                </div>
+
+            </div>
+
+
+            <div class="projetos-card">
+                <img src="./img/projeto responsivo.png" alt="Projeto 3" class="projetos-imagem">
+                <div class="caixa-texto-projetos">
+                    <h3 class="info-projetos">We Care</h3>
+                    <p class="paragrafo-projetos">Projeto responsivo feito com HTML, CSS focado em responsividade para
+                        os usuarios </p>
+                </div>
+            </div>
+
+    </section>
+
+    <section id="contatos" class="contatos">
+
+        <h2 class="contatos-titulo">Entre em Contato</h2>
+        <form class="formulario-contato" id="formulario" onsubmit="enviarWhats(event)">
+            <div class="grupo-form">
+                <input placeholder="Nome" class="campo-form" id="nome">
+            </div>
+
+            <div class="grupo-form">
+                <textarea class="campo-form" placeholder="Digiti sua Mensagem" rows="6" id="mensagem"></textarea>
+            </div>
+            <button type="submit" class="botao-form">Enviar WhatsApp</button>
+
+        </form>
+
+
+
+
+
+
+    </section>
+
+    <script>
+
+        function enviarWhats(event) {
+            event.preventDefault();
+
+            const nome = document.getElementById('nome').value;
+            const mensagem = document.getElementById('mensagem').value;
+            const telefone = "5511977056768"
+
+            const texto = "Olá, Me chamo ${nome}, ${mensagem}";
+            const msgFormatada = encodeURIComponent(texto);
+
+            const url = `https://wa.me/${telefone}/?text=${msgFormatada}`
+
+            window.open(url, '_blank');
+
+        }
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>
